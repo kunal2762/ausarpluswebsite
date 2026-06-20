@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>News & Offers | Ausar Plus Ayurveda</title>
+  <meta content="Read the latest Ausar Plus Ayurveda news, offers, and wellness stories tailored for natural living." name="description">
+  <meta content="Ayurveda news, offers, wellness tips, promotions" name="keywords">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    /* ── Tokens ── */
+    :root {
+      --cream:   #faf7f2;
+      --amber:   #e8a045;
+      --amber-d: #c4872e;
+      --bark:    #3b2f1e;
+      --stone:   #6b5e4e;
+      --leaf:    #4a7c59;
+      --card-bg: #ffffff;
+      --radius:  14px;
+      --shadow:  0 4px 24px rgba(59,47,30,.09);
+    }
+
+    body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--bark); }
+
+    /* ── Hero Banner ── */
+    .news-hero {
+      background: linear-gradient(135deg, #2b1d0e 0%, #5a3a1a 60%, #e8a045 100%);
+      padding: 140px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .news-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .news-hero .badge-pill {
+      display: inline-block;
+      background: rgba(232,160,69,.2);
+      border: 1px solid rgba(232,160,69,.4);
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 18px;
+    }
+    .news-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .news-hero h1 span { color: var(--amber); }
+    .news-hero p {
+      color: rgba(255,255,255,.7);
+      font-size: 16px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── Section Labels ── */
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 10px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      color: var(--bark);
+      margin-bottom: 0;
+    }
+    .section-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--amber);
+      border-radius: 2px;
+      margin: 14px 0 36px;
+    }
+
+    /* ── Offer Cards ── */
+    .offers-section { padding: 80px 0 60px; }
+
+    .offer-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease;
+      height: 100%;
+    }
+    .offer-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(59,47,30,.14);
+    }
+    .offer-card-img {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .offer-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+    .offer-card:hover .offer-card-img img { transform: scale(1.07); }
+
+    .offer-tag {
+      position: absolute;
+      top: 14px; left: 14px;
+      background: var(--amber);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .offer-tag.news-tag { background: var(--leaf); }
+
+    .offer-card-body { padding: 22px 24px 26px; }
+    .offer-card-body h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--bark);
+      margin-bottom: 10px;
+    }
+    .offer-card-body p {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .offer-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #a0907e;
+      margin-bottom: 16px;
+    }
+    .offer-meta i { color: var(--amber); }
+
+    .btn-offer {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--amber);
+      text-decoration: none;
+      border-bottom: 1.5px solid transparent;
+      transition: border-color .2s, gap .2s;
+    }
+    .btn-offer:hover { border-color: var(--amber); gap: 10px; color: var(--amber-d); }
+
+    /* ── Featured Offer Banner ── */
+    .featured-offer {
+      background: linear-gradient(120deg, var(--bark) 0%, #5a3a1a 100%);
+      border-radius: 20px;
+      padding: 52px 48px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 60px;
+    }
+    .featured-offer::after {
+      content: '🌿';
+      font-size: 120px;
+      position: absolute;
+      right: 40px; top: 50%;
+      transform: translateY(-50%);
+      opacity: .08;
+      line-height: 1;
+    }
+    .featured-offer .tag {
+      display: inline-block;
+      background: var(--amber);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .featured-offer h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .featured-offer h2 span { color: var(--amber); }
+    .featured-offer p { color: rgba(255,255,255,.7); font-size: 15px; max-width: 480px; margin-bottom: 28px; }
+
+    .btn-featured {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--amber);
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background .3s, transform .3s;
+      box-shadow: 0 4px 16px rgba(232,160,69,.35);
+    }
+    .btn-featured:hover { background: var(--amber-d); transform: translateY(-2px); color: #fff; }
+
+    /* ── Newsletter Strip ── */
+    .newsletter-strip {
+      background: var(--cream);
+      border: 1.5px solid #e8dfd2;
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      margin: 60px 0;
+    }
+    .newsletter-strip h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      color: var(--bark);
+      margin-bottom: 8px;
+    }
+    .newsletter-strip p { color: var(--stone); font-size: 14px; margin-bottom: 28px; }
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+    .newsletter-form input[type="email"] {
+      flex: 1;
+      border: 1.5px solid #ddd3c4;
+      border-radius: 30px;
+      padding: 12px 20px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      color: var(--bark);
+      outline: none;
+      transition: border-color .2s;
+    }
+    .newsletter-form input[type="email"]:focus { border-color: var(--amber); }
+    .newsletter-form button {
+      background: var(--amber);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 26px;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      cursor: pointer;
+      transition: background .3s;
+      white-space: nowrap;
+    }
+    .newsletter-form button:hover { background: var(--amber-d); }
+
+    /* ── Testimonials ── */
+    .testimonials-section { padding: 60px 0 80px; }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px 28px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 72px;
+      color: var(--amber);
+      opacity: .25;
+      position: absolute;
+      top: 10px; left: 18px;
+      line-height: 1;
+    }
+    .testimonial-card p {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      padding-top: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-author img {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--amber);
+    }
+    .testimonial-author h5 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--bark);
+      margin: 0;
+    }
+    .testimonial-author span {
+      font-size: 12px;
+      color: #a0907e;
+    }
+    .stars { color: var(--amber); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .featured-offer { padding: 36px 28px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form button { border-radius: 30px; }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Top Bar -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <i class="icofont-clock-time"></i> Monday - Saturday, 10AM to 10PM
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="icofont-phone"></i> Call us now +91 9673030684
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+      <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="Ausar Plus logo"></a>
+      <nav class="nav-menu d-none d-lg-block" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="active"><a href="blog.html">News &amp; Offers</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <div class="news-hero">
+      <div class="container" data-aos="fade-up">
+        <div class="badge-pill">Latest Updates</div>
+        <h1>News &amp; <span>Offers</span></h1>
+        <p>Stay connected with new product launches, seasonal discounts, and Ayurvedic wellness stories.</p>
+      </div>
+    </div>
+
+    <!-- Featured Offer -->
+    <section class="offers-section">
+      <div class="container">
+
+        <div class="featured-offer" data-aos="fade-up">
+          <div class="tag">🔥 Limited Time</div>
+          <h2>Flat 20% Off on All <span>Immunity Boosters</span></h2>
+          <p>Stock up on our best-selling herbal immunity range this season. Use code <strong style="color:var(--amber)">AUSAR20</strong> at checkout.</p>
+          <a href="products.html" class="btn-featured">Shop Now &rarr;</a>
+        </div>
+
+        <!-- Offer Cards -->
+        <div class="row mb-2">
+          <div class="col-12">
+            <span class="section-eyebrow">Current Offers</span>
+            <h2 class="section-heading">Exclusive Deals for You</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="offer-card">
+              <div class="offer-card-img">
+                <img src="assets/img/departments-1.jpg" alt="Buy 2 Get 1 Free offer" loading="lazy">
+                <span class="offer-tag">Offer</span>
+              </div>
+              <div class="offer-card-body">
+                <div class="offer-meta"><i class="bx bx-calendar"></i> Valid till 30 June 2025</div>
+                <h4>Buy 2 Get 1 Free on Herbal Teas</h4>
+                <p>Enjoy our premium herbal blends with this special combo offer. Perfect for gifting or stocking up your wellness shelf.</p>
+                <a href="products.html" class="btn-offer">View Products <i class="bx bx-right-arrow-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="offer-card">
+              <div class="offer-card-img">
+                <img src="assets/img/departments-2.jpg" alt="New product launch offer" loading="lazy">
+                <span class="offer-tag">New Launch</span>
+              </div>
+              <div class="offer-card-body">
+                <div class="offer-meta"><i class="bx bx-calendar"></i> Launched June 2025</div>
+                <h4>Introducing Brahmi Hair Growth Serum</h4>
+                <p>Our newest addition — a potent Brahmi-infused serum for stronger, thicker hair rooted in ancient Ayurvedic formulas.</p>
+                <a href="products.html" class="btn-offer">Explore Now <i class="bx bx-right-arrow-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="offer-card">
+              <div class="offer-card-img">
+                <img src="assets/img/departments-3.jpg" alt="Monsoon wellness kit offer" loading="lazy">
+                <span class="offer-tag">Seasonal</span>
+              </div>
+              <div class="offer-card-body">
+                <div class="offer-meta"><i class="bx bx-calendar"></i> Monsoon Special</div>
+                <h4>Monsoon Wellness Kit at ₹499</h4>
+                <p>Beat the rainy season with our curated kit — immunity drops, tulsi kadha mix, and neem face pack in one bundle.</p>
+                <a href="products.html" class="btn-offer">Get the Kit <i class="bx bx-right-arrow-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- News Cards -->
+        <div class="row mb-2">
+          <div class="col-12">
+            <span class="section-eyebrow">From Our World</span>
+            <h2 class="section-heading">Latest News &amp; Stories</h2>
+            <div class="section-divider"></div>
+          </div>
+        </div>
+
+        <div class="row g-4" data-aos="fade-up" data-aos-delay="150">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="offer-card">
+              <div class="offer-card-img">
+                <img src="assets/img/departments-4.jpg" alt="Ausar Plus expansion news" loading="lazy">
+                <span class="offer-tag news-tag">News</span>
+              </div>
+              <div class="offer-card-body">
+                <div class="offer-meta"><i class="bx bx-map-pin"></i> Gondia &bull; Nagpur</div>
+                <h4>Ausar Plus Expands to 5 New Cities</h4>
+                <p>We're thrilled to bring our Ayurvedic products to Tirora, Waraseoni, and Balaghat. Find us at a store near you.</p>
+                <a href="contact.html" class="btn-offer">Find a Store <i class="bx bx-right-arrow-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="offer-card">
+              <div class="offer-card-img">
+                <img src="assets/img/departments-1.jpg" alt="Ayurveda wellness tips article" loading="lazy">
+                <span class="offer-tag news-tag">Wellness</span>
+              </div>
+              <div class="offer-card-body">
+                <div class="offer-meta"><i class="bx bx-user"></i> By Ausar Plus Team</div>
+                <h4>5 Ayurvedic Habits for a Healthier Monsoon</h4>
+                <p>Learn how to strengthen your digestion and immunity during the rainy season using simple daily Ayurvedic practices.</p>
+                <a href="#" class="btn-offer">Read Article <i class="bx bx-right-arrow-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="offer-card">
+              <div class="offer-card-img">
+                <img src="assets/img/departments-2.jpg" alt="Community wellness event" loading="lazy">
+                <span class="offer-tag news-tag">Event</span>
+              </div>
+              <div class="offer-card-body">
+                <div class="offer-meta"><i class="bx bx-calendar-event"></i> July 15, 2025 &bull; Nagpur</div>
+                <h4>Free Ayurvedic Wellness Camp in Nagpur</h4>
+                <p>Join us for a free health camp featuring pulse diagnosis, herbal consultations, and product demonstrations.</p>
+                <a href="contact.html" class="btn-offer">Register Free <i class="bx bx-right-arrow-alt"></i></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Newsletter Strip -->
+        <div class="newsletter-strip" data-aos="fade-up">
+          <h3>Never Miss an Offer 🌿</h3>
+          <p>Subscribe to get exclusive deals, wellness tips, and new product alerts straight to your inbox.</p>
+          <form class="newsletter-form" action="" method="post">
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="container">
+
+        <div class="row mb-2">
+          <div class="col-12 text-center">
+            <span class="section-eyebrow">Happy Customers</span>
+            <h2 class="section-heading">What People Say</h2>
+            <div class="section-divider mx-auto"></div>
+          </div>
+        </div>
+
+        <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>At Ausar Plus, our mission is rooted in the ancient wisdom of Ayurveda. We're not just about selling products — we're about creating a community focused on holistic health and well-being.</p>
+              <div class="testimonial-author">
+                <img src="assets/img/testimonials/testimonials-1.jpg" alt="Kamlesh Bagde">
+                <div>
+                  <h5>Kamlesh Bagde</h5>
+                  <span>CEO &amp; Founder</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>The herbal immunity booster has been a game-changer for my family. We haven't fallen sick since we started using Ausar Plus products. Truly nature's best medicine!</p>
+              <div class="testimonial-author">
+                <img src="assets/img/testimonials/testimonials-2.jpg" alt="Priya Sharma">
+                <div>
+                  <h5>Priya Sharma</h5>
+                  <span>Homemaker, Nagpur</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card">
+              <div class="stars">★★★★☆</div>
+              <p>I've tried many Ayurvedic brands but Ausar Plus stands out for purity and packaging. The Brahmi oil has done wonders for my hair growth in just 6 weeks.</p>
+              <div class="testimonial-author">
+                <img src="assets/img/testimonials/testimonials-3.jpg" alt="Rahul Meshram">
+                <div>
+                  <h5>Rahul Meshram</h5>
+                  <span>Teacher, Gondia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>AUSAR PLUS</h3>
+              <p>
+                Nagpur, Maharashtra<br><br>
+                <strong>Phone:</strong> +91 9673030684<br>
+                <strong>Email:</strong> info@ausarplus.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="about.html">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="products.html">Products</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Locations</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Gondia</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Nagpur</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Tirora</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Waraseoni</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Balaghat</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe for exclusive offers, wellness tips, and product updates.</p>
+            <form action="" method="post">
+              <input type="email" name="email" placeholder="Your email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">&copy; Copyright <strong><span>Ausar Plus</span></strong>. All Rights Reserved</div>
+      <div class="credits">Designed by <a href="https://wa.me/8552050638">KUNAL</a></div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

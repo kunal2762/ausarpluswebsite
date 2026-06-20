@@ -1,0 +1,4 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^/in/
+RewriteRule ^(.*)$ https://ausar.in/in/$1 [R=301,L]
